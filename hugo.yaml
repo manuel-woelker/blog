@@ -1,0 +1,83 @@
+baseURL: 'https://manuel-woelker.github.io/blog/'
+languageCode: 'en-us'
+title: 'Manuel Woelker'
+theme: PaperMod
+
+pagination:
+  pagerSize: 10
+
+outputs:
+  home:
+    - HTML
+    - JSON
+
+params:
+  author: "Manuel Woelker"
+  description: "A blog about software development, technology, and programming"
+  profileMode:
+    enabled: true
+    title: "Manuel Woelker"
+    subtitle: "Software Engineer | Technical Writer"
+    imageUrl: "/blog/images/profile.png"
+    imageAlt: "Manuel Woelker"
+    buttons:
+      - name: Posts
+        url: /blog/posts
+      - name: GitHub
+        url: https://github.com/manuel-woelker
+      - name: Twitter
+        url: https://twitter.com/manuel_woelker
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/manuel-woelker"
+    - name: twitter
+      url: "https://twitter.com/manuel_woelker"
+    - name: linkedin
+      url: "https://linkedin.com/in/manuel-woelker"
+
+  homeInfoParams:
+    Title: "Hi, welcome to my blog! 👋"
+    Content: |
+      I write about software development, technology trends, and programming best practices.
+      Explore my latest posts or [learn more about me](/blog/about).
+
+  assets:
+    favicon: "/blog/favicon.ico"
+    disableHLJS: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowToc: true
+  comments: false
+  hidemeta: false
+
+  env: production
+
+menu:
+  main:
+    - name: Posts
+      url: /blog/posts
+      weight: 10
+    - name: Tags
+      url: /blog/tags
+      weight: 20
+    - name: About
+      url: /blog/about
+      weight: 30
+    - name: Search
+      url: /blog/search
+      weight: 40
+
+minify:
+  minifyOutput: true
+
+markup:
+  highlight:
+    style: monokai
+    lineNos: true
+    noClasses: false
+
+taxonomies:
+  category: categories
+  tag: tags
