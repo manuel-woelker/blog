@@ -18,11 +18,11 @@ params:
     enabled: true
     title: "Manuel Woelker"
     subtitle: "Software Engineer | Technical Writer"
-    imageUrl: "/blog/images/profile.png"
+    imageUrl: "/images/profile.png"
     imageAlt: "Manuel Woelker"
     buttons:
       - name: Posts
-        url: /blog/posts
+        url: /posts
       - name: GitHub
         url: https://github.com/manuel-woelker
       - name: Twitter
@@ -40,10 +40,10 @@ params:
     Title: "Hi, welcome to my blog! 👋"
     Content: |
       I write about software development, technology trends, and programming best practices.
-      Explore my latest posts or [learn more about me](/blog/about).
+      Explore my latest posts or [learn more about me](/about).
 
   assets:
-    favicon: "/blog/favicon.ico"
+    favicon: "/favicon.ico"
     disableHLJS: false
 
   ShowReadingTime: true
@@ -57,16 +57,16 @@ params:
 menu:
   main:
     - name: Posts
-      url: /blog/posts
+      url: /posts
       weight: 10
     - name: Tags
-      url: /blog/tags
+      url: /tags
       weight: 20
     - name: About
-      url: /blog/about
+      url: /about
       weight: 30
     - name: Search
-      url: /blog/search
+      url: /search
       weight: 40
 
 minify:
