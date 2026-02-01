@@ -1,10 +1,10 @@
 ---
 title: "Let's Put Developer Documentation Where We Can Find It - In the Code"
 date: 2026-02-01T06:10:44+01:00
-draft: true
-tags: []
+draft: false
+tags: ["documentation"]
 categories: []
-description: ""
+description: "Hypothesis: Putting developer documentation directly into the code should make it easier to find, and easier to keep up to date."
 author: "Manuel Woelker"
 showToc: true
 ---
@@ -37,8 +37,12 @@ There may be many threads servicing HTTP requests simultaneously.
 Using a connection pool has the following benefits:
 
 1. Reduces database load because there's a fixed number of connections
-2. Improves latencies because the connection and authentication handshake can usually be omitted
-3. In situations of high load, some connection attempts can be gracefully denied to allow others to proceed. This is better than every thread bombarding the database, which would lead to no request making progress and everyone timing out.
+2. Improves latencies because the connection and authentication
+   handshake can usually be omitted
+3. In situations of high load, some connection attempts can be
+   gracefully denied to allow others to proceed. This is better than
+   every thread bombarding the database, which would lead to no request
+   making progress and everyone timing out.
 
 */
 let connection_pool = ConnectionPool::new(...)?;
@@ -48,9 +52,11 @@ I have experimented with using the unicode [📖 symbol](https://graphemica.com/
 
 If you are more ASCII-minded, something like `DOC:` would work as well.
 
-# Wait, isn't his just normal code comments?
+# Wait, isn't this just normal code comments?
 
-In theory yes, but in practice I have usually seen a lot of developer documentation put into a separate directory (or even a separate repository) making it harder to find, acess and update.
+In theory yes, but in practice I have usually seen a lot of developer documentation put into a separate directory (or even a separate repository) making it harder to find, access and update.
+
+The code comments I tend to find are usually more implementation focussed, and less about overarching concerns like architecture, security, performance, etc.
 
 For cross-cutting or "big picture" topics there may not be one source file to put this documentation into, but I think in many cases, putting more of this documentation into the code is better for discoverability and for keeping it up to date.
 
@@ -65,10 +71,30 @@ I think of it as "beyond" Literate Programming.
 
 My feeling is that Literate Programming as envisioned by Knuth would not work in most development teams, but I think this approach is a practical step in that direction.
 
-(Aside: I initial wanted call this "Post-literate Programming", but it turns out "post-literate" is already a concept that goes into a quite different dirction.)
+(Aside: I initially wanted to call this "Post-literate Programming", but it turns out "post-literate" is already a concept that has a different meaning and connotation.)
+
+# What are the downsides?
+
+1. **Documentation is sprinkled all over the place** - There is no "one place" to find the documentation. This could be ameliorate with tooling to extract this.
+2. **Violation of Separation of concerns** - This may be seen as mixing the concerns of code and documentation. Though I like to think of it as one concern: "Describing how the problem is solved", with parts of this description being readable by a compiler (i.e. the code).
+3. **No single source file for cross-cutting concerns**: Some cross-cutting or overarching documentation concepts may not have a clear single place to put it. That's okay - these probably should live in a central location. But it might be a good idea to cross-reference those at the the relevant places in the source code.
+4. **The development team needs to be onboard** - The people writing and using this documentation must actually follow this convention for it to have an impact.
+
+# Let's say I'm convinced - how do I get started?
+
+## Get your team on board
+
+If you're working in a development team, pitch this idea to your team, to get buy-in. Most developers I know are frustrated by insufficient and outdated devdocs, so this might be charging at an open door.
+
+## Just do it
+
+This should be fairly easy as well, just decide on a marker symbol, and start writing these documentation comments whenever there's some relevant information for understanding the code that can't be expressed in the code itself.
 
 # Is there any tooling for this?
 
 I am currently in the process of building it. ;-)
 
 It is called [hyperlit](https://github.com/manuel-woelker/hyperlit) - if you're interested, drop by and let me know your thoughts!
+
+*Full disclosure:* \
+I had Claude Code review this post before publishing. The text was all written by an organic neural network (i.e. me). All errors and omissions are entirely my own.
