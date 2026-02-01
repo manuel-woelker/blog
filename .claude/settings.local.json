@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(hugo new:*)",
+      "Bash(git submodule add:*)",
+      "Bash(hugo:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial Hugo blog setup with PaperMod theme\n\n- Configure Hugo for GitHub Pages project site \\(baseURL: /blog/\\)\n- Add PaperMod theme as submodule for clean, modern design\n- Set up GitHub Actions workflow for automatic deployment on push\n- Create initial blog structure with hello-world post\n- Add about page and search functionality\n- Configure site metadata, menu structure, and theme settings\n- Include documentation for local development and post creation\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(echo:*)"
+    ]
+  }
+}
