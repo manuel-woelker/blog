@@ -31,6 +31,8 @@ or even the [Socratic Method](https://en.wikipedia.org/wiki/Socratic_method).
 
 Stack Overflow was basically an entire *site* centered around this idea.
 
+Update 2026-02-26: Here's a great example I found in the wild: https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/
+
 Here are some concrete examples:
 
 | Conventional    | Question Driven                                                                                     |
