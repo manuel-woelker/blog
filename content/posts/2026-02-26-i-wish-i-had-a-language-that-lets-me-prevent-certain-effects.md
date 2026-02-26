@@ -1,7 +1,7 @@
 
 ---
 title: "I wish I had a language that lets me prevent certain functions to have certain effects"
-date: 2026-02-26T19:31:21+01:00
+date: 2026-02-26T18:00:00+01:00
 draft: false
 tags: ["compiler", "effects"]
 categories: []
